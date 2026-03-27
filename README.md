@@ -27,6 +27,18 @@ The Art Authentication Agent combines multiple Azure services to provide compreh
 | **Risk Alerts** | Identifies anomalies and suspicious indicators |
 | **94% Forgery Detection** | Quantum-enhanced accuracy surpasses traditional ML by 16% |
 
+## 🎥 Try the Demo
+
+🚀 **Interactive Live Demo**: https://toolofuture.github.io/evollard/
+
+Try the agent with your own artwork images! The demo provides:
+- 🖼️ Real-time image analysis
+- 📊 Visual authentication scores and detailed reports
+- 🎯 Instant feedback on forgery risk assessment
+- 💡 Educational breakdown of analysis pipeline
+
+Upload your artwork and see how Azure Quantum-enhanced analysis works in action!
+
 ## 🔬 Why Azure Quantum?
 
 ### The Problem
