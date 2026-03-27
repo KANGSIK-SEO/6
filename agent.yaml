@@ -1,0 +1,241 @@
+# Art Authentication Agent Configuration
+# Microsoft Agent Framework YAML specification for Microsoft Foundry
+
+name: "Art Authentication Agent"
+description: "AI-powered artwork authentication system for analyzing artwork authenticity using vision analysis, provenance verification, and quantum-enhanced pattern recognition"
+
+version: "1.0.0"
+
+# Agent Framework configuration
+framework:
+  sdk: "agent-framework-azure-ai"
+  version: "1.0.0rc3"
+  runtime: "python"
+  python_version: "3.10+"
+
+# Model configuration
+model:
+  provider: "foundry"  # Use Microsoft Foundry deployment
+  deployment_name: "${FOUNDRY_MODEL_DEPLOYMENT_NAME}"
+  endpoint: "${FOUNDRY_PROJECT_ENDPOINT}"
+  api_key: "${FOUNDRY_API_KEY}"
+  # Alternative models for different workloads:
+  # - gpt-4o: For comprehensive analysis (recommended)
+  # - gpt-4-turbo: For faster response times
+  # - claude-opus: For alternative provider
+
+# Agent tools configuration
+tools:
+  - name: "vision_analysis"
+    description: "Analyzes artwork images for physical characteristics (color, brushwork, materials)"
+    type: "function"
+    module: "tools.vision_tool"
+    function: "create_vision_tool"
+    inputs:
+      - name: "image_source"
+        type: "string"
+        description: "URL or filepath of artwork image"
+        required: true
+    outputs:
+      - name: "analysis_result"
+        type: "object"
+        description: "Visual analysis including color, brushwork, materials"
+  
+  - name: "provenance_search"
+    description: "Searches auction history and ownership records for artwork authentication"
+    type: "function"
+    module: "tools.data_tool"
+    function: "create_provenance_tool"
+    inputs:
+      - name: "artist"
+        type: "string"
+        description: "Artist name"
+        required: true
+      - name: "title"
+        type: "string"
+        description: "Artwork title"
+        required: true
+    outputs:
+      - name: "provenance_result"
+        type: "object"
+        description: "Auction records and ownership history"
+  
+  - name: "authentication_analysis"
+    description: "Calculates comprehensive authentication score based on multiple factors"
+    type: "function"
+    module: "tools.analysis_tool"
+    function: "create_analyzer"
+    inputs:
+      - name: "vision_results"
+        type: "object"
+        description: "Results from vision analysis"
+        required: true
+      - name: "provenance_results"
+        type: "object"
+        description: "Results from provenance search"
+        required: true
+    outputs:
+      - name: "authentication_score"
+        type: "object"
+        description: "Authentication verdict with confidence level and risk assessment"
+  
+  - name: "report_generation"
+    description: "Generates comprehensive authentication report in multiple formats"
+    type: "function"
+    module: "tools.report_tool"
+    function: "create_report_generator"
+    inputs:
+      - name: "artwork_info"
+        type: "object"
+        description: "Artwork metadata"
+        required: true
+      - name: "authentication_result"
+        type: "object"
+        description: "Authentication analysis results"
+        required: true
+    outputs:
+      - name: "report"
+        type: "object"
+        description: "Structured authentication report (JSON, PDF, CSV)"
+
+# Azure service integrations
+azure_services:
+  - service: "Azure AI Vision"
+    endpoint: "${AZURE_VISION_ENDPOINT}"
+    api_key: "${AZURE_VISION_KEY}"
+    capabilities:
+      - "image_analysis"
+      - "optical_character_recognition"
+      - "object_detection"
+    usage: "Analyze artwork images for physical characteristics"
+  
+  - service: "Azure Quantum"
+    endpoint: "${AZURE_QUANTUM_ENDPOINT}"
+    api_key: "${AZURE_QUANTUM_KEY}"
+    capabilities:
+      - "high_dimensional_analysis"
+      - "pattern_matching"
+      - "anomaly_detection"
+    usage: "Advanced pattern recognition in artwork data"
+  
+  - service: "Azure Data Services"
+    endpoint: "${AZURE_DATA_ENDPOINT}"
+    api_key: "${AZURE_DATA_KEY}"
+    database: "art_provenance"
+    tables:
+      - "auction_records"
+      - "ownership_history"
+      - "museum_collections"
+    usage: "Store and query provenance data"
+  
+  - service: "Microsoft SharePoint"
+    tenant_id: "${AZURE_TENANT_ID}"
+    site_id: "${SHAREPOINT_SITE_ID}"
+    list_name: "Art Collection Provenance"
+    usage: "Share authentication reports and provenance documentation"
+
+# Authentication and security
+authentication:
+  method: "azure_ad"
+  tenant_id: "${AZURE_TENANT_ID}"
+  managed_identity: true
+  key_vault: "${AZURE_KEYVAULT_NAME}"
+
+# Input/Output specifications
+input:
+  type: "object"
+  properties:
+    - name: "image_source"
+      type: "string"
+      description: "Artwork image URL or filepath"
+      required: true
+    - name: "artist"
+      type: "string"
+      description: "Artist name"
+      required: true
+    - name: "title"
+      type: "string"
+      description: "Artwork title"
+      required: true
+    - name: "metadata"
+      type: "object"
+      description: "Additional artwork metadata (period, medium, dimensions)"
+      required: false
+
+output:
+  type: "object"
+  properties:
+    - name: "authentication_verdict"
+      type: "string"
+      description: "Overall authentication conclusion"
+    - name: "score"
+      type: "number"
+      description: "Authentication confidence score (0-100)"
+    - name: "confidence_level"
+      type: "string"
+      description: "Confidence level (very_high, high, moderate, low, very_low)"
+    - name: "report"
+      type: "object"
+      description: "Detailed authentication report"
+
+# Evaluation metrics
+evaluation:
+  metrics:
+    - name: "accuracy"
+      threshold: 0.92
+      description: "Percentage of correct authenticity determinations"
+    
+    - name: "false_positive_rate"
+      threshold: 0.05
+      description: "Rate of incorrectly authenticated forgeries"
+    
+    - name: "false_negative_rate"
+      threshold: 0.03
+      description: "Rate of incorrectly rejected authentic artworks"
+    
+    - name: "processing_time"
+      threshold: 60
+      unit: "seconds"
+      description: "Average time to complete authentication analysis"
+
+# Logging and monitoring
+logging:
+  level: "INFO"
+  handlers:
+    - type: "console"
+    - type: "file"
+      path: "logs/agent.log"
+    - type: "azure_application_insights"
+      instrumentation_key: "${APPINSIGHTS_INSTRUMENTATION_KEY}"
+
+monitoring:
+  enabled: true
+  metrics:
+    - "authentication_score_distribution"
+    - "processing_time"
+    - "error_rate"
+    - "tool_usage_frequency"
+
+# Deployment configuration
+deployment:
+  environment: "foundry"
+  health_check_interval: 60
+  max_workers: 4
+  timeout: 300
+  retry_policy:
+    max_retries: 3
+    backoff_multiplier: 2.0
+
+# Documentation
+meta:
+  author: "Your Name / Organization"
+  created_date: "2026-03-27"
+  last_updated: "2026-03-27"
+  tags:
+    - "art-authentication"
+    - "computer-vision"
+    - "provenance-verification"
+    - "quantum-analysis"
+    - "ai-agent"
+  repository: "https://github.com/yourusername/art-authentication-agent"
+  documentation: "README.md"

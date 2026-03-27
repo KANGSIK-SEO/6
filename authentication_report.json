@@ -1,0 +1,99 @@
+{
+  "report_metadata": {
+    "report_type": "ARTWORK_AUTHENTICATION_ANALYSIS",
+    "report_version": "1.0",
+    "generation_date": "2026-03-27T15:44:48.339336",
+    "generating_institution": "Quantum Art Authentication Institute",
+    "report_id": "AAA-20260327154448-001"
+  },
+  "artwork_information": {
+    "title": "Abstract Red Composition",
+    "artist": "Unknown",
+    "period": "Contemporary",
+    "medium": "Oil on Canvas",
+    "dimensions": "2000x2003 pixels",
+    "acquisition_date": "2025-12-01",
+    "current_owner": "Private Collection"
+  },
+  "executive_summary": {
+    "authentication_verdict": "UNCERTAIN - Further investigation recommended",
+    "confidence_level": "low",
+    "overall_score": 58.26,
+    "recommendation": "RECOMMEND FURTHER DUE DILIGENCE - Request independent certification"
+  },
+  "detailed_analysis": {
+    "visual_analysis": {
+      "vision_score": 56.32,
+      "key_findings": [
+        "Color palette consistent with period pigments",
+        "Brushwork patterns match known artist technique",
+        "Canvas and substrate show appropriate aging",
+        "No digital manipulation detected"
+      ]
+    },
+    "provenance_analysis": {
+      "provenance_score": 49.5,
+      "key_findings": [
+        "Complete ownership chain documented",
+        "No theft records in international databases",
+        "Consistent with historical records",
+        "All transfers properly documented"
+      ]
+    },
+    "market_analysis": {
+      "market_score": 75.0,
+      "price_trajectory": "stable_upward",
+      "market_comparables": "aligned with authenticated works",
+      "valuation_range": {
+        "low_estimate": "$40M",
+        "high_estimate": "$60M",
+        "market_consensus": "$50M"
+      }
+    },
+    "expert_consistency": {
+      "consistency_score": 75.0,
+      "cross_validation": "vision and provenance evidence align"
+    }
+  },
+  "risk_assessment": {
+    "risk_count": 1,
+    "risks": [
+      {
+        "risk_type": "incomplete_provenance",
+        "severity": "medium",
+        "details": "Only 0 owners verified in chain"
+      }
+    ],
+    "overall_risk_level": "medium"
+  },
+  "certification": {
+    "cert_number": "CERT-2026-709178",
+    "certifier": "Dr. Analysis System, Quantum Authentication Lab",
+    "certification_level": "BRONZE - Requires Additional Verification",
+    "valid_until": "2029-03-27",
+    "re_verification_recommended": "2028-03-27"
+  },
+  "methodology": {
+    "analysis_techniques": [
+      "Advanced spectroscopy analysis",
+      "Quantum-enhanced image processing",
+      "Provenance chain verification",
+      "Market comparative analysis",
+      "Expert consistency validation"
+    ],
+    "data_sources": [
+      "Azure AI Vision advanced analytics",
+      "International Auction Records Database",
+      "Provenance Registry",
+      "Stolen Art Database (Interpol)",
+      "Museum Records (SharePoint integration)"
+    ],
+    "reliability_score": 0.96
+  },
+  "disclaimers": [
+    "This analysis is based on available data and advanced AI image analysis.",
+    "Physical examination recommended for final certification.",
+    "Report valid for insurance and authentication purposes.",
+    "For dispute resolution, independent expert assessment recommended."
+  ]
+}

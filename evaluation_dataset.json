@@ -1,0 +1,259 @@
+{
+  "evaluation_dataset": {
+    "metadata": {
+      "version": "1.0",
+      "created_date": "2026-03-27",
+      "description": "Evaluation dataset for Art Authentication Agent",
+      "total_samples": 10,
+      "distribution": {
+        "authentic": 6,
+        "forgery": 4
+      }
+    },
+    "test_cases": [
+      {
+        "id": "EVAL-001",
+        "artwork": {
+          "title": "Water Lilies",
+          "artist": "Claude Monet",
+          "year": "1906",
+          "medium": "Oil on Canvas",
+          "period": "Late Impressionism",
+          "dimensions": "200cm x 180cm"
+        },
+        "image_source": "https://example.com/monet_water_lilies_authentic.jpg",
+        "expected_verdict": "AUTHENTICATED",
+        "expected_score_range": [85, 95],
+        "expected_confidence": "very_high",
+        "ground_truth": {
+          "authenticity": true,
+          "reason": "Museum verified, complete provenance, consistent with artist technique"
+        },
+        "evaluation_notes": "Classic Monet work with full documentation"
+      },
+      {
+        "id": "EVAL-002",
+        "artwork": {
+          "title": "Starry Night",
+          "artist": "Vincent van Gogh",
+          "year": "1889",
+          "medium": "Oil on Canvas",
+          "period": "Post-Impressionism",
+          "dimensions": "73.7cm x 92.1cm"
+        },
+        "image_source": "https://example.com/van_gogh_starry_night_authentic.jpg",
+        "expected_verdict": "AUTHENTICATED",
+        "expected_score_range": [90, 98],
+        "expected_confidence": "very_high",
+        "ground_truth": {
+          "authenticity": true,
+          "reason": "Museum of Modern Art collection, extensively documented"
+        },
+        "evaluation_notes": "One of the most famous paintings, extensive records"
+      },
+      {
+        "id": "EVAL-003",
+        "artwork": {
+          "title": "Girl with a Pearl Earring",
+          "artist": "Johannes Vermeer",
+          "year": "1665",
+          "medium": "Oil on Canvas",
+          "period": "Dutch Golden Age",
+          "dimensions": "44.5cm x 39cm"
+        },
+        "image_source": "https://example.com/vermeer_pearl_earring_authentic.jpg",
+        "expected_verdict": "AUTHENTICATED",
+        "expected_score_range": [88, 96],
+        "expected_confidence": "very_high",
+        "ground_truth": {
+          "authenticity": true,
+          "reason": "Mauritshuis museum permanent collection, iconographic work"
+        },
+        "evaluation_notes": "Highly recognizable with clear provenance"
+      },
+      {
+        "id": "EVAL-004",
+        "artwork": {
+          "title": "Nighthawks (Alleged Copy)",
+          "artist": "Edward Hopper",
+          "year": "2020",
+          "medium": "Oil on Canvas",
+          "period": "Modern Forgery",
+          "dimensions": "84.1cm x 152.4cm"
+        },
+        "image_source": "https://example.com/hopper_nighthawks_forgery.jpg",
+        "expected_verdict": "SUSPICIOUS",
+        "expected_score_range": [25, 40],
+        "expected_confidence": "high",
+        "ground_truth": {
+          "authenticity": false,
+          "reason": "Digital creation date detectable, inconsistent canvas aging, modern paint composition"
+        },
+        "evaluation_notes": "Recent forgery with detectable modern materials"
+      },
+      {
+        "id": "EVAL-005",
+        "artwork": {
+          "title": "Sunflowers (Copy by Unknown Artist)",
+          "artist": "Unknown (Claims van Gogh)",
+          "year": "Unknown",
+          "medium": "Oil on Canvas",
+          "period": "20th Century Copy",
+          "dimensions": "92cm x 73cm"
+        },
+        "image_source": "https://example.com/sunflowers_copy.jpg",
+        "expected_verdict": "LIKELY FORGED",
+        "expected_score_range": [20, 35],
+        "expected_confidence": "high",
+        "ground_truth": {
+          "authenticity": false,
+          "reason": "Brushwork differs from van Gogh, no provenance, paint analysis inconsistent"
+        },
+        "evaluation_notes": "Skillful imitation but lacks van Gogh's distinctive technique"
+      },
+      {
+        "id": "EVAL-006",
+        "artwork": {
+          "title": "The Persistence of Memory",
+          "artist": "Salvador Dalí",
+          "year": "1931",
+          "medium": "Oil on Canvas",
+          "period": "Surrealism",
+          "dimensions": "24cm x 33cm"
+        },
+        "image_source": "https://example.com/dali_persistence_authentic.jpg",
+        "expected_verdict": "AUTHENTICATED",
+        "expected_score_range": [92, 98],
+        "expected_confidence": "very_high",
+        "ground_truth": {
+          "authenticity": true,
+          "reason": "MoMA permanent collection, exhaustively studied, unique composition"
+        },
+        "evaluation_notes": "Iconic surrealist work with clear documentation"
+      },
+      {
+        "id": "EVAL-007",
+        "artwork": {
+          "title": "Composition with Red Blue and Yellow (Suspicious)",
+          "artist": "Piet Mondrian",
+          "year": "Unknown",
+          "medium": "Oil on Canvas",
+          "period": "De Stijl Movement",
+          "dimensions": "80cm x 80cm"
+        },
+        "image_source": "https://example.com/mondrian_suspicious.jpg",
+        "expected_verdict": "UNCERTAIN",
+        "expected_score_range": [45, 65],
+        "expected_confidence": "moderate",
+        "ground_truth": {
+          "authenticity": "uncertain",
+          "reason": "Partial provenance, geometric precision consistent but materials need analysis"
+        },
+        "evaluation_notes": "Requires additional expert examination"
+      },
+      {
+        "id": "EVAL-008",
+        "artwork": {
+          "title": "American Gothic (Alleged Forgery)",
+          "artist": "Grant Wood",
+          "year": "2015",
+          "medium": "Digital Print on Canvas",
+          "period": "Modern Forgery",
+          "dimensions": "77.8cm x 65.4cm"
+        },
+        "image_source": "https://example.com/american_gothic_forgery.jpg",
+        "expected_verdict": "LIKELY FORGED",
+        "expected_score_range": [15, 30],
+        "expected_confidence": "very_high",
+        "ground_truth": {
+          "authenticity": false,
+          "reason": "Digital artifact patterns detected, canvas modern, no historical records"
+        },
+        "evaluation_notes": "Clear digital forgery with detectable artifacts"
+      },
+      {
+        "id": "EVAL-009",
+        "artwork": {
+          "title": "The Son of Man",
+          "artist": "René Magritte",
+          "year": "1964",
+          "medium": "Oil on Canvas",
+          "period": "Surrealism",
+          "dimensions": "97.5cm x 75.5cm"
+        },
+        "image_source": "https://example.com/magritte_son_of_man_authentic.jpg",
+        "expected_verdict": "AUTHENTICATED",
+        "expected_score_range": [89, 97],
+        "expected_confidence": "very_high",
+        "ground_truth": {
+          "authenticity": true,
+          "reason": "Museum of Modern Art Brussels, well-documented, unique composition"
+        },
+        "evaluation_notes": "Iconic surrealist portrait with clear provenance"
+      },
+      {
+        "id": "EVAL-010",
+        "artwork": {
+          "title": "The Great Wave (High-Quality Forgery)",
+          "artist": "Katsushika Hokusai",
+          "year": "Unknown",
+          "medium": "Woodblock Print (Modern Reproduction)",
+          "period": "Edo Period (Modern Copy)",
+          "dimensions": "25.2cm x 37.6cm"
+        },
+        "image_source": "https://example.com/hokusai_great_wave_forgery.jpg",
+        "expected_verdict": "SUSPICIOUS",
+        "expected_score_range": [35, 50],
+        "expected_confidence": "moderate",
+        "ground_truth": {
+          "authenticity": false,
+          "reason": "Modern paper, ink composition different from Edo period, no artist seal verification"
+        },
+        "evaluation_notes": "High-quality forgery requiring expert examination"
+      }
+    ],
+    "evaluation_metrics": {
+      "accuracy": {
+        "definition": "Percentage of correct authenticity determinations",
+        "target": 0.92,
+        "calculation": "correct_predictions / total_samples"
+      },
+      "false_positive_rate": {
+        "definition": "Rate of incorrectly authenticated forgeries (calling forgery authentic)",
+        "target": 0.05,
+        "calculation": "false_positives / total_forgeries"
+      },
+      "false_negative_rate": {
+        "definition": "Rate of incorrectly rejected authentic artworks",
+        "target": 0.03,
+        "calculation": "false_negatives / total_authentic"
+      },
+      "precision": {
+        "definition": "Of all items marked authentic, how many are actually authentic",
+        "target": 0.95,
+        "calculation": "true_positives / (true_positives + false_positives)"
+      },
+      "recall": {
+        "definition": "Of all actual authentic items, how many are identified correctly",
+        "target": 0.97,
+        "calculation": "true_positives / (true_positives + false_negatives)"
+      },
+      "f1_score": {
+        "definition": "Harmonic mean of precision and recall",
+        "target": 0.96,
+        "calculation": "2 * (precision * recall) / (precision + recall)"
+      }
+    },
+    "evaluation_procedure": {
+      "step_1": "Submit artwork details and image to agent",
+      "step_2": "Agent performs vision analysis on image",
+      "step_3": "Agent searches provenance records",
+      "step_4": "Agent calculates authentication score",
+      "step_5": "Compare agent verdict with ground truth",
+      "step_6": "Record metric results",
+      "step_7": "Aggregate results across all test cases",
+      "step_8": "Generate evaluation report"
+    },
+    "notes": "This dataset is designed for developmental and testing purposes. For production evaluation, additional test cases and diverse artwork styles should be included. Success metrics should be reviewed quarterly as the agent learns from more authentication cases."
+  }
+}
