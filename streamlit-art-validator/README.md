@@ -14,8 +14,8 @@ pinned: false
 Streamlit 기반 데모 앱입니다. 고객이 미술품 이미지를 업로드하면 Hugging Face의
 AI 생성 이미지 판별 모델 2종을 함께 실행해 위작(AI 생성) 가능성을 추정합니다.
 
-- [Smogy/SMOGY-Ai-images-detector](https://huggingface.co/Smogy/SMOGY-Ai-images-detector)
-- [dima806/ai_vs_real_image_detection](https://huggingface.co/dima806/ai_vs_real_image_detection)
+- [Ateeqq/ai-vs-human-image-detector](https://huggingface.co/Ateeqq/ai-vs-human-image-detector) (Apache-2.0)
+- [dima806/ai_vs_human_generated_image_detection](https://huggingface.co/dima806/ai_vs_human_generated_image_detection) (Apache-2.0)
 
 두 모델의 "인공적/AI 생성" 확률 중 더 높은 값을 종합 위작 지수로 사용하고,
 모델별 상세 결과도 함께 보여줍니다. (평균이 아니라 최댓값을 쓰는 이유: 두 모델 중

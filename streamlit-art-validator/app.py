@@ -5,8 +5,8 @@ from PIL import Image
 from transformers import pipeline
 
 MODELS = {
-    "Smogy/SMOGY-Ai-images-detector": "Smogy/SMOGY-Ai-images-detector",
-    "dima806/ai_vs_real_image_detection": "dima806/ai_vs_real_image_detection",
+    "Ateeqq/ai-vs-human-image-detector": "Ateeqq/ai-vs-human-image-detector",
+    "dima806/ai_vs_human_generated_image_detection": "dima806/ai_vs_human_generated_image_detection",
 }
 
 FAKE_KEYWORDS = ("artificial", "ai", "fake", "generated", "synthetic")
@@ -33,8 +33,8 @@ def fake_score(predictions):
 
 st.title("🎨 가짜 미술품(위작) 검증 서비스")
 st.caption(
-    "Hugging Face의 AI 생성 이미지 판별 모델 2종(Smogy/SMOGY-Ai-images-detector, "
-    "dima806/ai_vs_real_image_detection)의 결과를 결합해 업로드한 이미지의 위작·AI 생성 가능성을 추정합니다."
+    "Hugging Face의 AI 생성 이미지 판별 모델 2종(Ateeqq/ai-vs-human-image-detector, "
+    "dima806/ai_vs_human_generated_image_detection)의 결과를 결합해 업로드한 이미지의 위작·AI 생성 가능성을 추정합니다."
 )
 
 with st.expander("⚠️ 사용 전 꼭 읽어주세요 (한계 안내)", expanded=True):
