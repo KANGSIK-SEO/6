@@ -17,9 +17,10 @@ python predict_wind.py --data-dir "C:\Users\evoll\Downloads\open" --out submissi
 
 - **NMAE 최적화**: 대회 평가지표(1-NMAE)에 맞춰 모든 모델이 MAE(L1) 목적함수로 학습
 - **다양성 앙상블** (7개 모델 평균):
-  - 모델 계열: LightGBM gbdt ×3, LightGBM dart ×1, HistGradientBoosting ×2, ExtraTrees ×1
+  - 모델 계열: LightGBM ×4 (잎 수 31/63/127, 학습률 차등), HistGradientBoosting ×2, ExtraTrees ×1
   - 시드 다양성: 계열별 서로 다른 random seed
   - 피처 다양성: 모델별 colsample/max_features 0.6~0.9 차등
+- **홀드아웃 검증**: `--validate` 플래그로 시간순 마지막 20% 구간의 모델별/앙상블 NMAE 확인 가능
 - **그룹별 학습**: 풍력단지 그룹 컬럼이 감지되면 3개 그룹 각각 개별 모델 학습
 - **물리 기반 피처**: 풍속 2·3제곱(P ∝ v³), 풍향 벡터 분해(u/v), 시간 주기성(sin/cos)
 - **자동 컬럼 탐지**: 한글/영문 컬럼명(발전량, 일시, 풍속, 그룹 등) 자동 인식

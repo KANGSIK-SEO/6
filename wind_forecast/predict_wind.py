@@ -117,15 +117,18 @@ def build_features(train, test, target_col, dt_col, id_col):
     feat_cols = [c for c in test.columns if c not in drop_cols and c in train.columns]
 
     # 범주형은 코드로 변환 (train/test 합쳐서 일관되게)
+    # pandas 3.x는 문자열을 object가 아닌 'str' dtype으로 읽으므로 dtype==object 검사로는 놓친다.
     for c in feat_cols:
-        if train[c].dtype == object:
+        if pd.api.types.is_numeric_dtype(train[c]) and pd.api.types.is_numeric_dtype(test[c]):
+            train[c] = pd.to_numeric(train[c], errors="coerce")
+            test[c] = pd.to_numeric(test[c], errors="coerce")
+        else:
             both = pd.concat([train[c], test[c]], axis=0).astype("category")
             train[c] = pd.Categorical(train[c], categories=both.cat.categories).codes
             test[c] = pd.Categorical(test[c], categories=both.cat.categories).codes
-        else:
-            train[c] = pd.to_numeric(train[c], errors="coerce")
-            test[c] = pd.to_numeric(test[c], errors="coerce")
 
+    # 전부 결측인 컬럼은 모델 학습을 깨뜨리므로 제외
+    feat_cols = [c for c in feat_cols if train[c].notna().any()]
     return feat_cols
 
 
@@ -140,20 +143,20 @@ def make_models():
     try:
         import lightgbm as lgb
 
-        for seed, colsample, boosting in [
-            (42, 0.8, "gbdt"),
-            (202, 0.6, "gbdt"),
-            (777, 0.9, "gbdt"),
-            (1234, 0.7, "dart"),
+        # 시드/피처비율/트리구조(잎 수·학습률)를 달리한 gbdt 4종
+        for seed, colsample, leaves, lr in [
+            (42, 0.8, 63, 0.03),
+            (202, 0.6, 63, 0.03),
+            (777, 0.9, 31, 0.05),
+            (1234, 0.7, 127, 0.02),
         ]:
             models.append((
-                f"lgbm_{boosting}_s{seed}",
+                f"lgbm_l{leaves}_s{seed}",
                 lgb.LGBMRegressor(
                     objective="l1",  # NMAE에 맞춘 MAE 목적함수
-                    boosting_type=boosting,
                     n_estimators=1200,
-                    learning_rate=0.03,
-                    num_leaves=63,
+                    learning_rate=lr,
+                    num_leaves=leaves,
                     colsample_bytree=colsample,
                     subsample=0.8,
                     subsample_freq=1,
@@ -213,6 +216,41 @@ def fit_predict_group(X_tr, y_tr, X_te):
     return np.clip(ens, 0.0, cap)
 
 
+def nmae(y_true, y_pred, capacity):
+    """설비용량 정규화 NMAE(%). 대회 공식 정의와 다르면 capacity 산정만 바꾸면 됨."""
+    return float(np.mean(np.abs(y_true - y_pred)) / capacity * 100)
+
+
+def validate_group(X, y, dt_order=None, holdout_frac=0.2):
+    """시간순 마지막 holdout_frac 구간을 검증셋으로 떼어 모델별/앙상블 NMAE 출력."""
+    n = len(X)
+    order = np.argsort(dt_order.values) if dt_order is not None else np.arange(n)
+    cut = int(n * (1 - holdout_frac))
+    tr_idx, va_idx = order[:cut], order[cut:]
+
+    X_tr, X_va = X.iloc[tr_idx], X.iloc[va_idx]
+    y_tr, y_va = y.iloc[tr_idx].to_numpy(), y.iloc[va_idx].to_numpy()
+
+    med = X_tr.median(numeric_only=True)
+    X_tr = X_tr.fillna(med)
+    X_va = X_va.fillna(med)
+
+    capacity = float(np.max(y))  # 관측 최대 발전량을 설비용량 근사치로 사용
+    cap_clip = float(y_tr.max()) * 1.05
+
+    preds = []
+    for name, model in make_models():
+        model.fit(X_tr, y_tr)
+        p = np.clip(model.predict(X_va), 0.0, cap_clip)
+        preds.append(p)
+        print(f"    - {name}: NMAE={nmae(y_va, p, capacity):.3f}%")
+
+    ens = np.mean(preds, axis=0)
+    score = nmae(y_va, ens, capacity)
+    print(f"    => 앙상블 NMAE={score:.3f}%  (검증 {len(va_idx)}행, 1-NMAE={100 - score:.3f})")
+    return score
+
+
 # ---------------------------------------------------------------------------
 # 메인
 # ---------------------------------------------------------------------------
@@ -221,6 +259,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--data-dir", default="open", help="train/test/sample_submission CSV가 있는 폴더")
     ap.add_argument("--out", default="submission.csv")
+    ap.add_argument("--validate", action="store_true",
+                    help="시간순 홀드아웃(마지막 20%%)으로 모델별/앙상블 NMAE를 먼저 출력")
     args = ap.parse_args()
 
     d = args.data_dir
@@ -264,6 +304,24 @@ def main():
     print(f"피처 {len(feat_cols)}개: {feat_cols}")
 
     y = pd.to_numeric(train[target_col], errors="coerce")
+    dt_order = pd.to_datetime(train[dt_col], errors="coerce") if dt_col else None
+
+    if args.validate:
+        print("\n===== 홀드아웃 검증 (시간순 마지막 20%) =====")
+        if group_col and group_col in feat_cols and train[group_col].nunique() > 1:
+            scores = []
+            for g in sorted(train[group_col].dropna().unique()):
+                m = (train[group_col] == g).values
+                print(f"[group {g}] 검증")
+                scores.append(validate_group(
+                    train.loc[m, feat_cols], y[m],
+                    dt_order[m] if dt_order is not None else None,
+                ))
+            print(f"===== 그룹 평균 NMAE={np.mean(scores):.3f}% =====\n")
+        else:
+            validate_group(train[feat_cols], y, dt_order)
+            print()
+
     test_pred = np.zeros(len(test))
 
     if group_col and group_col in feat_cols and test[group_col].nunique() > 1:
