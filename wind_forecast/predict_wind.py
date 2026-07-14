@@ -55,7 +55,7 @@ def load_csv(path):
             return pd.read_csv(path, encoding=enc)
         except UnicodeDecodeError:
             continue
-    return pd.read_csv(path, encoding="utf-8", errors="replace")
+    return pd.read_csv(path, encoding="utf-8", encoding_errors="replace")
 
 
 # ---------------------------------------------------------------------------
