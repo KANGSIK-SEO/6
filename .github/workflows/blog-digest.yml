@@ -1,0 +1,78 @@
+name: Daily Tech Blog Digest
+
+# Runs the blog crawler on a schedule and commits a dated Markdown digest.
+#
+# NOTE: GitHub Actions runners have full outbound internet access, so the
+# crawl actually works here even though the Claude Code remote environment's
+# network policy blocks the blog hosts.
+#
+# Scheduled workflows only run from the repository's DEFAULT branch, so this
+# file must be merged to the default branch before the cron trigger fires.
+# You can test it any time from the Actions tab via "Run workflow"
+# (workflow_dispatch).
+
+on:
+  schedule:
+    # 22:00 UTC daily == 07:00 KST (Asia/Seoul) the next morning
+    - cron: "0 22 * * *"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Look back this many days"
+        default: "1"
+        required: false
+      region:
+        description: "Region filter (usa, china, or empty for all)"
+        default: ""
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: blog-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r blog_crawler/requirements.txt
+
+      - name: Generate digest
+        env:
+          DAYS: ${{ github.event.inputs.days || '1' }}
+          REGION: ${{ github.event.inputs.region || '' }}
+        run: |
+          set -euo pipefail
+          DATE="$(date -u +%Y-%m-%d)"
+          mkdir -p digests
+          REGION_ARG=""
+          if [ -n "$REGION" ]; then REGION_ARG="--region $REGION"; fi
+          python blog_crawler/crawler.py \
+            --days "$DAYS" $REGION_ARG \
+            --format markdown \
+            --output "digests/${DATE}.md"
+          cp "digests/${DATE}.md" digests/latest.md
+
+      - name: Commit digest
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add digests
+          if git diff --cached --quiet; then
+            echo "No digest changes to commit."
+          else
+            git commit -m "Daily tech blog digest ($(date -u +%Y-%m-%d))"
+            git push
+          fi
