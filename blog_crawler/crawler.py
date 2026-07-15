@@ -41,7 +41,6 @@ except ImportError:  # pragma: no cover
 
 from feeds import filter_feeds
 
-ATOM_NS = "{http://www.w3.org/2005/Atom}"
 USER_AGENT = (
     "Mozilla/5.0 (compatible; TechBlogCrawler/1.0; "
     "+https://github.com/) blog-crawler"
@@ -60,11 +59,24 @@ def _clean(text):
     return re.sub(r"\s+", " ", text).strip()
 
 
+_STRPTIME_FORMATS = (
+    "%Y-%m-%d %H:%M:%S %z",
+    "%Y-%m-%d %H:%M:%S",
+    "%Y-%m-%dT%H:%M:%S%z",
+    "%Y-%m-%d",
+)
+
+
 def _parse_date(raw):
-    """Parse an RSS (RFC-822) or Atom (ISO-8601) date into an aware datetime."""
+    """Parse an RSS (RFC-822) or Atom/ISO-8601 date into an aware datetime.
+
+    Real-world feeds are inconsistent, so several strategies are tried in
+    turn. Returns ``None`` if the string cannot be understood.
+    """
     if not raw:
         return None
     raw = raw.strip()
+
     # RSS 2.0 pubDate, e.g. "Tue, 14 Jul 2026 10:00:00 GMT"
     try:
         dt = parsedate_to_datetime(raw)
@@ -72,55 +84,97 @@ def _parse_date(raw):
             return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
     except (TypeError, ValueError):
         pass
-    # Atom / ISO-8601, e.g. "2026-07-13T09:00:00Z"
+
+    # Atom / ISO-8601, e.g. "2026-07-13T09:00:00Z" or with "+08:00"
     try:
         dt = datetime.fromisoformat(raw.replace("Z", "+00:00"))
         return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
     except ValueError:
+        pass
+
+    # Odd but common variants, e.g. "2026-07-12 00:00:00 +0800"
+    for fmt in _STRPTIME_FORMATS:
+        try:
+            dt = datetime.strptime(raw, fmt)
+            return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+        except ValueError:
+            continue
+    return None
+
+
+_URL_DATE_RE = re.compile(r"/(\d{4})[/-](\d{2})[/-](\d{2})[/-]")
+
+
+def _date_from_url(url):
+    """Fallback: derive a date from a dated permalink like /2026/07/12/....
+
+    Some feeds (e.g. Meituan's VuePress RSS) omit per-item dates but encode
+    the publication date in the article URL. Returns an aware datetime at
+    UTC midnight, or ``None`` if the URL has no date-like path segment.
+    """
+    if not url:
+        return None
+    m = _URL_DATE_RE.search(url)
+    if not m:
+        return None
+    try:
+        year, month, day = (int(g) for g in m.groups())
+        return datetime(year, month, day, tzinfo=timezone.utc)
+    except ValueError:
         return None
 
 
+def _local(tag):
+    """Return the lower-cased local name of an XML tag, dropping any namespace."""
+    return tag.rsplit("}", 1)[-1].lower()
+
+
 def _parse_feed(content):
-    """Parse RSS 2.0 or Atom bytes into a list of article dicts."""
+    """Parse RSS 2.0, RDF or Atom bytes into a list of article dicts.
+
+    Parsing is namespace-agnostic: elements are matched by their local name
+    (``item``/``entry``, ``title``, ``link``, ``pubDate``/``published``/...),
+    so feeds that mix namespaces (Atom + Dublin Core, Blogger, WordPress,
+    etc.) all work without special-casing each provider.
+    """
     root = ET.fromstring(content)
-    tag = root.tag.lower()
-    articles = []
 
-    if tag.endswith("feed"):  # Atom
-        for entry in root.findall(f"{ATOM_NS}entry"):
-            title = entry.findtext(f"{ATOM_NS}title")
-            link = ""
-            for link_el in entry.findall(f"{ATOM_NS}link"):
-                rel = link_el.get("rel", "alternate")
-                if rel == "alternate" or not link:
-                    link = link_el.get("href", link)
-            raw_date = (
-                entry.findtext(f"{ATOM_NS}published")
-                or entry.findtext(f"{ATOM_NS}updated")
-            )
-            summary = (
-                entry.findtext(f"{ATOM_NS}summary")
-                or entry.findtext(f"{ATOM_NS}content")
-            )
-            articles.append((title, link, raw_date, summary))
-    else:  # RSS 2.0 (and RDF-style feeds expose <item> too)
-        for item in root.findall(".//item"):
-            title = item.findtext("title")
-            link = item.findtext("link")
-            raw_date = (
-                item.findtext("pubDate")
-                or item.findtext("{http://purl.org/dc/elements/1.1/}date")
-            )
-            summary = item.findtext("description")
-            articles.append((title, link, raw_date, summary))
-
+    items = [el for el in root.iter() if _local(el.tag) in ("item", "entry")]
     parsed = []
-    for title, link, raw_date, summary in articles:
+
+    for item in items:
+        title = link = summary = None
+        dates = {}
+        for child in item:
+            name = _local(child.tag)
+            if name == "title" and not title:
+                title = child.text
+            elif name == "link":
+                href = child.get("href")
+                if href:  # Atom-style <link href="..." rel="..."/>
+                    rel = child.get("rel", "alternate")
+                    if rel == "alternate" or not link:
+                        link = href
+                elif child.text and not link:  # RSS-style <link>text</link>
+                    link = child.text
+            elif name in ("pubdate", "published", "updated", "date"):
+                dates.setdefault(name, child.text)
+            elif name in ("description", "summary", "content") and not summary:
+                summary = child.text
+
+        raw_date = (
+            dates.get("pubdate")
+            or dates.get("published")
+            or dates.get("updated")
+            or dates.get("date")
+        )
+        url = (link or "").strip()
+        published = _parse_date(raw_date) or _date_from_url(url)
         parsed.append(
             {
                 "title": _clean(title) or "(untitled)",
-                "url": (link or "").strip(),
-                "published": _parse_date(raw_date),
+                "url": url,
+                "published": published,
                 "summary": _clean(summary)[:280],
             }
         )
@@ -175,8 +229,14 @@ def crawl(feeds, days=7, limit_per_feed=0, timeout=20, workers=8):
             )
             kept = []
             for art in articles:
-                if cutoff and art["published"] and art["published"] < cutoff:
-                    continue
+                if cutoff:
+                    # When a date window is active, only keep posts we can
+                    # confirm fall inside it. Undated posts (feeds that omit
+                    # per-item dates and have no dated permalink) can't be
+                    # confirmed recent, so they are dropped here; run with
+                    # --days 0 to browse everything regardless of date.
+                    if art["published"] is None or art["published"] < cutoff:
+                        continue
                 kept.append(art)
                 if limit_per_feed and len(kept) >= limit_per_feed:
                     break
@@ -283,8 +343,9 @@ def build_parser():
     p.add_argument("--category", help="substring match on category "
                                       "(e.g. 'ai', 'cloud', 'engineering')")
     p.add_argument("--days", type=int, default=7,
-                   help="only keep posts published within N days "
-                        "(0 = no date filter, default: 7)")
+                   help="only keep posts published within N days; undated "
+                        "posts are dropped when this is > 0 "
+                        "(0 = no date filter, keep everything; default: 7)")
     p.add_argument("--limit", type=int, default=0,
                    help="max articles per feed (0 = unlimited)")
     p.add_argument("--format", choices=["console", "json", "markdown"],
