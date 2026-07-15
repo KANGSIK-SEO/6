@@ -43,13 +43,21 @@ python crawler.py --list-feeds
 | `--region {usa,china}` | 지역 필터 | 전체 |
 | `--company TEXT` | 회사명 부분 일치 (예: `google`) | 전체 |
 | `--category TEXT` | 카테고리 부분 일치 (`ai`, `cloud`, `engineering`, `general`) | 전체 |
-| `--days N` | 최근 N일 이내 글만 (`0`이면 날짜 필터 없음) | `7` |
+| `--days N` | 최근 N일 이내 글만. `N>0`이면 날짜를 확인할 수 없는 글은 제외, `0`이면 날짜 필터 없이 전체 | `7` |
 | `--limit N` | 피드당 최대 글 수 (`0`이면 무제한) | `0` |
 | `--format {console,json,markdown}` | 출력 형식 | `console` |
 | `--output FILE` | 파일로 저장 (미지정 시 표준출력) | 표준출력 |
 | `--timeout SEC` | 요청 타임아웃(초) | `20` |
 | `--workers N` | 동시 수집 스레드 수 | `8` |
 | `--list-feeds` | 피드 목록만 출력하고 종료 | - |
+
+## 날짜가 없는 피드 처리
+
+일부 피드는 항목별 발행일을 제공하지 않습니다.
+
+- **Meituan** 등 URL에 날짜가 들어있는 경우(`/2026/07/12/...`)는 permalink에서 날짜를 추출합니다.
+- **Google Developers** 처럼 어디에도 날짜가 없는 피드는 "날짜 미상"으로 처리되어,
+  `--days N`(N>0) 필터가 걸리면 제외됩니다. 이런 피드까지 모두 보려면 `--days 0`로 실행하세요.
 
 ## 네트워크 정책 관련 주의
 
