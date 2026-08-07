@@ -1,39 +1,28 @@
 # Tech Blog Digest (2026-08-07)
 
-_26 article(s)_
+_15 article(s)_
 
 ## Silicon Valley / US
 
-- **AWS Machine Learning** · 2026-08-06 — [Securing AI agents with temporal policies in Amazon Bedrock AgentCore](https://aws.amazon.com/blogs/machine-learning/securing-ai-agents-with-temporal-policies-in-amazon-bedrock-agentcore/)
-- **AWS Machine Learning** · 2026-08-06 — [Configure rate limits for AI traffic on AgentCore gateway](https://aws.amazon.com/blogs/machine-learning/configure-rate-limits-for-ai-traffic-on-agentcore-gateway/)
-- **AWS Machine Learning** · 2026-08-06 — [Control agent behaviors and cost beyond a single action: new capabilities in Amazon Bedrock AgentCore](https://aws.amazon.com/blogs/machine-learning/control-agent-behaviors-and-cost-beyond-a-single-action-new-capabilities-in-amazon-bedrock-agentcore/)
-- **AWS Machine Learning** · 2026-08-06 — [Build visibility for Codex on Amazon Bedrock with OpenTelemetry and Amazon CloudWatch](https://aws.amazon.com/blogs/machine-learning/build-visibility-for-codex-on-amazon-bedrock-with-opentelemetry-and-amazon-cloudwatch/)
-- **AWS Machine Learning** · 2026-08-06 — [Enforcing data residency with single-Region Claude Code on Amazon Bedrock](https://aws.amazon.com/blogs/machine-learning/enforcing-data-residency-with-single-region-claude-code-on-amazon-bedrock/)
-- **AWS Machine Learning** · 2026-08-06 — [Agent Skills for Automated Reasoning policies in Amazon Bedrock](https://aws.amazon.com/blogs/machine-learning/agent-skills-for-automated-reasoning-policies-in-amazon-bedrock/)
-- **AWS Machine Learning** · 2026-08-06 — [Building an agentic app deployer with Amazon Bedrock and AWS Lambda](https://aws.amazon.com/blogs/machine-learning/building-an-agentic-app-deployer-with-amazon-bedrock-and-aws-lambda/)
-- **AWS Machine Learning** · 2026-08-06 — [LLM optimization integration for Amazon SageMaker Python SDK](https://aws.amazon.com/blogs/machine-learning/llm-optimization-integration-for-amazon-sagemaker-python-sdk/)
+- **AWS Machine Learning** · 2026-08-07 — [How Cohere Health digitizes clinical policies using Amazon Bedrock AgentCore](https://aws.amazon.com/blogs/machine-learning/how-cohere-health-digitizes-clinical-policies-using-amazon-bedrock-agentcore/)
+- **AWS Machine Learning** · 2026-08-07 — [How TReNDS automates root-cause analysis with Amazon Bedrock](https://aws.amazon.com/blogs/machine-learning/how-trends-automates-root-cause-analysis-with-amazon-bedrock/)
+- **AWS Machine Learning** · 2026-08-07 — [Determining playoff clinching scenarios in the NHL using constraint programming](https://aws.amazon.com/blogs/machine-learning/determining-playoff-clinching-scenarios-in-the-nhl-using-constraint-programming/)
 - **AWS News** · 2026-08-06 — [Runtime instances: persistent compute for production AI agents on Amazon Bedrock AgentCore](https://aws.amazon.com/blogs/aws/runtime-instances-persistent-compute-for-production-ai-agents-on-amazon-bedrock-agentcore/)
-- **Cloudflare** · 2026-08-06 — [Cloudflare AI Search: give your agents a search engine for your data](https://blog.cloudflare.com/ai-search-easier/)
-- **Cloudflare** · 2026-08-06 — [The next generation of MCP](https://blog.cloudflare.com/mcp-v2/)
-- **Cloudflare** · 2026-08-06 — [From ranking to recommended: get your site ready to thrive in the age of AI agents](https://blog.cloudflare.com/aeo/)
-- **Cloudflare** · 2026-08-06 — [Building an open Agentic Internet: readable, discoverable, callable, and payable](https://blog.cloudflare.com/the-agentic-internet/)
-- **Cloudflare** · 2026-08-06 — [Introducing Kitesurf: The agent-first browser that runs in V8 isolates on Cloudflare Workers](https://blog.cloudflare.com/kitesurf/)
-- **Cloudflare** · 2026-08-06 — [Give any website a WebMCP interface](https://blog.cloudflare.com/webmcp/)
-- **GitHub** · 2026-08-06 — [A guide to slash commands in the GitHub Copilot app](https://github.blog/ai-and-ml/github-copilot/a-guide-to-slash-commands-in-the-github-copilot-app/)
-- **GitHub** · 2026-08-06 — [How we took malware advisories beyond npm](https://github.blog/security/supply-chain-security/how-we-took-malware-advisories-beyond-npm/)
-- **Google (The Keyword)** · 2026-08-06 — [How Gemini plans such detailed vacation itineraries for you](https://blog.google/products-and-platforms/products/gemini/how-gemini-plans-trips/)
-- **Google (The Keyword)** · 2026-08-06 — [Parents can now send money to their kids on Google Wallet.](https://blog.google/products-and-platforms/platforms/google-pay/send-kids-money-google-wallet/)
-- **Google (The Keyword)** · 2026-08-06 — [Our WeatherNext 2 AI model demonstrated a massive leap forward in predicting cyclones.](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/weathernext-2-cyclones/)
-- **Google (The Keyword)** · 2026-08-06 — [Step into the world of tango on Google Arts & Culture](https://blog.google/company-news/outreach-and-initiatives/arts-culture/argentina-tango-collection/)
-- **Google (The Keyword)** · 2026-08-06 — [Ask Maps gets more helpful with food ordering and more](https://blog.google/products-and-platforms/products/maps/order-food-in-ask-maps/)
-- **NVIDIA** · 2026-08-06 — [GeForce NOW Shakes Up August With 26 New Games](https://blogs.nvidia.com/blog/geforce-now-thursday-august-2026-games-list/)
-- **NVIDIA** · 2026-08-06 — [Into the Omniverse: How Open World Models Push the Frontier of Physical AI](https://blogs.nvidia.com/blog/open-world-models-physical-ai/)
-- **OpenAI** · 2026-08-06 — [Improving GPT‑5.6 Sol in ChatGPT—and expanding access to GPT-5.6 Luna for free users](https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt)
-- **OpenAI** · 2026-08-06 — [Working with the American Psychological Association on youth mental health and AI](https://openai.com/index/openai-and-apa-partner-to-advance-responsible-ai)
+- **Apple Machine Learning** · 2026-08-07 — [Scaling Categorical Flow Maps](https://machinelearning.apple.com/research/scaling-categorical-flow-maps)
+- **Apple Machine Learning** · 2026-08-07 — [Beyond Next-Token Prediction: A Performance Characterization of Diffusion versus Autoregressive Language Models](https://machinelearning.apple.com/research/diffusion-autoregressive-performance)
+- **Apple Machine Learning** · 2026-08-07 — [Arbitrage: Efficient Reasoning via Advantage-Aware Speculation](https://machinelearning.apple.com/research/arbitrage-efficient-reasoning)
+- **Cloudflare** · 2026-08-07 — [Unveiling good and bad behaviors on the Agentic Internet](https://blog.cloudflare.com/good-and-bad-agentic-behaviors/)
+- **Cloudflare** · 2026-08-07 — [Introducing Radar Researcher: An AI tool for exploring Internet data in plain language](https://blog.cloudflare.com/introducing-radar-researcher/)
+- **Cloudflare** · 2026-08-07 — [Announcing Cloudflare Ambassadors, Community Engineers, and another $1M in open-source funding](https://blog.cloudflare.com/community-program-refresh/)
+- **Cloudflare** · 2026-08-07 — [Unifying Workers AI and AI Gateway into a single AI control plane](https://blog.cloudflare.com/workers-ai-gateway-unification/)
+- **Google (The Keyword)** · 2026-08-07 — [See what 5 builders are making with Gemini Omni](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-builders/)
+- **Netflix Tech** · 2026-08-07 — [How and Why Netflix Built a Real-Time Distributed Graph: Part 3 — Querying the graph with gRPC…](https://netflixtechblog.com/how-and-why-netflix-built-a-real-time-distributed-graph-part-3-querying-the-graph-with-grpc-0f3468349607?source=rss----2615bd06b42e---4)
+- **OpenAI** · 2026-08-07 — [Responding to the next frontier of critical cyber capabilities](https://openai.com/index/responding-next-frontier-critical-cyber-capabilities)
+- **OpenAI** · 2026-08-07 — [How HSP GRUPPE builds AI capabilities for tax advisory](https://openai.com/index/hsp-gruppe)
 
 ## Feeds with errors
 - Microsoft AI: network error: 410 Client Error: Gone for url: https://blogs.microsoft.com/ai/feed/
+- Meta AI: network error: 404 Client Error: Not Found for url: https://ai.meta.com/blog/rss/
 - Uber Engineering: network error: 404 Client Error: Not Found for url: https://www.uber.com/us/en/blog/engineering/rss/
 - Baidu Research: parse error: mismatched tag: line 57, column 2
-- Meta AI: network error: 404 Client Error: Not Found for url: https://ai.meta.com/blog/rss/
-- Alibaba Cloud: parse error: not well-formed (invalid token): line 11, column 95
+- Alibaba Cloud: parse error: syntax error: line 1, column 0
