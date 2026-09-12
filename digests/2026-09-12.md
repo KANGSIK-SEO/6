@@ -1,20 +1,14 @@
 # Tech Blog Digest (2026-09-12)
 
-_7 article(s)_
+_1 article(s)_
 
 ## Silicon Valley / US
 
-- **AWS Machine Learning** · 2026-09-11 — [Monitoring production agent lifecycle with AWS DevOps Agent and AgentCore Evaluations](https://aws.amazon.com/blogs/machine-learning/monitoring-production-agent-lifecycle-with-aws-devops-agent-and-agentcore-evaluations/)
-- **AWS Machine Learning** · 2026-09-11 — [Beyond the price per token: Choosing the right OpenAI model on Amazon Bedrock for your workload](https://aws.amazon.com/blogs/machine-learning/beyond-the-price-per-token-choosing-the-right-openai-model-on-amazon-bedrock-for-your-workload/)
-- **AWS Machine Learning** · 2026-09-11 — [Build interactive MCP Apps using Amazon Bedrock AgentCore](https://aws.amazon.com/blogs/machine-learning/build-interactive-mcp-apps-using-amazon-bedrock-agentcore/)
-- **Cloudflare** · 2026-09-11 — [Introducing automatic remediation policies with Cloudflare CASB](https://blog.cloudflare.com/casb-policies/)
-- **GitHub** · 2026-09-11 — [Marketing ops as code: Automating events from planning to follow-up on GitHub](https://github.blog/ai-and-ml/github-copilot/marketing-ops-as-code-automating-events-from-planning-to-follow-up-on-github/)
-- **Google (The Keyword)** · 2026-09-11 — [Three Google supported projects premiere during the 83rd Venice International Film Festival.](https://blog.google/innovation-and-ai/technology/xr-ar/three-google-supported-projects-premiere-during-the-83rd-venice-international-film-festival/)
-- **OpenAI** · 2026-09-11 — [Rapidly scaling online storage to serve over 1 billion ChatGPT users](https://openai.com/index/scaling-storage-one-billion-users-part-one)
+- **OpenAI** · 2026-09-14 — [Perplexity trusts GPT-6 Astra with end-to-end systems](https://openai.com/index/perplexity-improving-accuracy-with-astra)
 
 ## Feeds with errors
 - Microsoft AI: network error: 410 Client Error: Gone for url: https://blogs.microsoft.com/ai/feed/
-- Meta AI: network error: 404 Client Error: Not Found for url: https://ai.meta.com/blog/rss/
 - Uber Engineering: network error: 404 Client Error: Not Found for url: https://www.uber.com/us/en/blog/engineering/rss/
 - Baidu Research: parse error: mismatched tag: line 57, column 2
+- Meta AI: network error: 404 Client Error: Not Found for url: https://ai.meta.com/blog/rss/
 - Alibaba Cloud: parse error: syntax error: line 1, column 0
