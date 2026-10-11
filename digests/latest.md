@@ -1,21 +1,11 @@
-# Tech Blog Digest (2026-10-10)
+# Tech Blog Digest (2026-10-11)
 
-_8 article(s)_
+_0 article(s)_
 
-## Silicon Valley / US
-
-- **AWS Machine Learning** · 2026-10-09 — [ICYMI: What landed for AI builders in September 2026](https://aws.amazon.com/blogs/machine-learning/icymi-what-landed-for-ai-builders-in-september-2026/)
-- **AWS Machine Learning** · 2026-10-09 — [How Postman runs Agent Mode for 40 million developers on Amazon Bedrock](https://aws.amazon.com/blogs/machine-learning/how-postman-runs-agent-mode-for-40-million-developers-on-amazon-bedrock/)
-- **Cloudflare** · 2026-10-09 — [Introducing Clef-omni with full multimodality, plus a faster Clef and a cheaper Clef-flash](https://blog.cloudflare.com/clef-faster-cheaper-multimodal/)
-- **Cloudflare** · 2026-10-09 — [Introducing on-demand CPU and memory profiling with flamegraphs for Workers and Durable Objects](https://blog.cloudflare.com/workers-on-demand-profiling/)
-- **Cloudflare** · 2026-10-09 — [Deno is joining Cloudflare](https://blog.cloudflare.com/deno-joins-cloudflare/)
-- **GitHub** · 2026-10-09 — [Hack the World: Why hackathons are still the best place to learn to build](https://github.blog/developer-skills/career-growth/hack-the-world-why-hackathons-are-still-the-best-place-to-learn-to-build/)
-- **OpenAI** · 2026-10-09 — [Sophos cuts threat investigation time by 96% with OpenAI Daybreak](https://openai.com/index/sophos)
-- **OpenAI** · 2026-10-09 — [Asana cuts model costs 76x in browser tests with GPT-6.1 Sol](https://openai.com/index/asana-browser-agent)
 
 ## Feeds with errors
 - Microsoft AI: network error: 410 Client Error: Gone for url: https://blogs.microsoft.com/ai/feed/
 - Uber Engineering: network error: 404 Client Error: Not Found for url: https://www.uber.com/us/en/blog/engineering/rss/
+- Meta AI: network error: 404 Client Error: Not Found for url: https://ai.meta.com/blog/rss/
 - Baidu Research: parse error: mismatched tag: line 57, column 2
 - Alibaba Cloud: parse error: syntax error: line 1, column 0
-- Meta AI: network error: 404 Client Error: Not Found for url: https://ai.meta.com/blog/rss/
