@@ -1,37 +1,38 @@
-# Tech Blog Digest (2026-10-20)
+# Tech Blog Digest (2026-10-21)
 
-_24 article(s)_
+_25 article(s)_
 
 ## Silicon Valley / US
 
-- **AWS Machine Learning** · 2026-10-19 — [Structured outputs for Anthropic Claude models on Amazon Bedrock](https://aws.amazon.com/blogs/machine-learning/structured-outputs-for-anthropic-claude-models-on-amazon-bedrock/)
-- **AWS Machine Learning** · 2026-10-19 — [Developers can now access SageMaker Studio through the new AWS experience](https://aws.amazon.com/blogs/machine-learning/developers-can-now-access-sagemaker-studio-through-the-new-aws-experience/)
-- **AWS Machine Learning** · 2026-10-19 — [Amazon SageMaker JumpStart: 2026 year-to-date in review](https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-jumpstart-2026-year-to-date-in-review/)
-- **AWS Machine Learning** · 2026-10-19 — [Pegasus 1.5 from TwelveLabs is now available in Amazon Bedrock](https://aws.amazon.com/blogs/machine-learning/pegasus-1-5-from-twelvelabs-is-now-available-in-amazon-bedrock/)
-- **AWS Machine Learning** · 2026-10-19 — [How Deepgram optimized voice AI at scale with AWS Trainium](https://aws.amazon.com/blogs/machine-learning/how-deepgram-optimized-voice-ai-at-scale-with-aws-trainium/)
-- **AWS Machine Learning** · 2026-10-19 — [Push-based KV transfer to improve TTFT and TPOT for disaggregated inference in vLLM](https://aws.amazon.com/blogs/machine-learning/push-based-kv-transfer-to-improve-ttft-and-tpot-for-disaggregated-inference-in-vllm/)
-- **AWS Machine Learning** · 2026-10-19 — [Improve TTFT for multi-turn agentic workloads with bi-directional KV transfer in vLLM](https://aws.amazon.com/blogs/machine-learning/improve-ttft-for-multi-turn-agentic-workloads-with-bi-directional-kv-transfer-in-vllm/)
-- **AWS News** · 2026-10-19 — [AWS Weekly Roundup: AWS Lambda Web Functions, Amazon S3 on the Vercel Marketplace, and more (October 19, 2026)](https://aws.amazon.com/blogs/aws/aws-weekly-roundup-aws-lambda-web-functions-amazon-s3-on-the-vercel-marketplace-and-more-october-19-2026/)
-- **Cloudflare** · 2026-10-19 — [Cutting our inference bill by 68% by being obsessive about optimization](https://blog.cloudflare.com/obsessive-inference-optimization/)
-- **Cloudflare** · 2026-10-19 — [Introducing Clairic, a new System One class of extraction models](https://blog.cloudflare.com/clairic-extraction-model/)
-- **Cloudflare** · 2026-10-19 — [Beyond the patch: Protecting your NetScaler gateway against future vulnerabilities](https://blog.cloudflare.com/protect-your-netscaler-gateway/)
-- **GitHub** · 2026-10-19 — [How to continue a GitHub Copilot app session in VS Code](https://github.blog/ai-and-ml/github-copilot/how-to-continue-a-github-copilot-app-session-in-vs-code/)
-- **Google (The Keyword)** · 2026-10-19 — [Partnering to strengthen the grid and support local communities in Arkansas](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/arkansas-partnerships/)
-- **Google (The Keyword)** · 2026-10-19 — [How to shape your slides and videos with Gemini Notebook](https://blog.google/innovation-and-ai/products/gemini-notebook/co-create-slides-videos/)
-- **Google (The Keyword)** · 2026-10-19 — [4 tips for styling outfits with Gemini](https://blog.google/products-and-platforms/products/gemini/stylist-outfit-tips-gemini/)
-- **Google (The Keyword)** · 2026-10-19 — [See the top style searches from people in big fashion capitals.](https://blog.google/products-and-platforms/products/search/fashion-capital-style-searches/)
-- **Google (The Keyword)** · 2026-10-19 — [We’re supporting nature restoration through sustainable farming in Brazil.](https://blog.google/company-news/outreach-and-initiatives/sustainability/brazil-silvopasture/)
-- **Meta Engineering** · 2026-10-19 — [GenRecs Tokenization: Transforming Ads Recommendation at Meta with Stable Model Vocabulary](https://engineering.fb.com/2026/10/19/ml-applications/genrecs-tokenization-transforming-ads-recommendation-at-meta-with-stable-model-vocabulary/)
-- **Meta Engineering** · 2026-10-19 — [The Thin Orchestrator: How We Made Our AI Agents More Reliable by Giving the Router Less to Do](https://engineering.fb.com/2026/10/19/ml-applications/thin-orchestrator-ai-agent-architecture/)
-- **Meta Engineering** · 2026-10-19 — [Inside Prometheus: Meta’s Journey to a Gigawatt-Scale Supercluster](https://engineering.fb.com/2026/10/19/data-center-engineering/inside-prometheus-meta-gigawatt-scale-supercluster/)
-- **Microsoft** · 2026-10-19 — [Securing the agentic insider](https://blogs.microsoft.com/blog/2026/10/19/securing-the-agentic-insider/)
-- **NVIDIA** · 2026-10-19 — [Germany Wants to Lead the World in Industrial AI: How NVIDIA Will Help](https://blogs.nvidia.com/blog/germany-wants-to-lead-the-world-in-industrial-ai-how-nvidia-will-help/)
-- **NVIDIA** · 2026-10-19 — [NVIDIA Advances Agentic Security for Media, From European Public Service Broadcasting to Global Content Production](https://blogs.nvidia.com/blog/media-agentic-security-european-public-service-broadcasting-global-content-production/)
-- **OpenAI** · 2026-10-19 — [Advancing coding in low‑resource programming languages](https://openai.com/index/low-resource-programming-languages)
+- **AWS Machine Learning** · 2026-10-20 — [Beyond the KV cache: Training and serving i14’s Laplace 3B linear attention model on AWS Trainium2 with native PyTorch](https://aws.amazon.com/blogs/machine-learning/beyond-the-kv-cache-training-and-serving-i14s-laplace-3b-linear-attention-model-on-aws-trainium2-with-native-pytorch/)
+- **AWS Machine Learning** · 2026-10-20 — [Work management context for AI agents with Smartsheet MCP on AWS](https://aws.amazon.com/blogs/machine-learning/work-management-context-for-ai-agents-with-smartsheet-mcp-on-aws/)
+- **AWS Machine Learning** · 2026-10-20 — [From data to decisions: Conversational supply chain intelligence with Amazon Quick and Amazon Bedrock AgentCore](https://aws.amazon.com/blogs/machine-learning/from-data-to-decisions-conversational-supply-chain-intelligence-with-amazon-quick-and-amazon-bedrock-agentcore/)
+- **AWS Machine Learning** · 2026-10-20 — [Fine-tuning GPT-OSS-20B for multilingual reasoning on Amazon SageMaker HyperPod](https://aws.amazon.com/blogs/machine-learning/fine-tuning-gpt-oss-20b-for-multilingual-reasoning-on-amazon-sagemaker-hyperpod/)
+- **AWS Machine Learning** · 2026-10-20 — [How Octave built a secure multi-tenant AI foundation on Amazon Bedrock](https://aws.amazon.com/blogs/machine-learning/how-octave-built-a-secure-multi-tenant-ai-foundation-on-amazon-bedrock/)
+- **AWS Machine Learning** · 2026-10-20 — [Access OpenAI GPT models on Amazon Bedrock from Canada with cross-Region inference](https://aws.amazon.com/blogs/machine-learning/access-openai-gpt-models-on-amazon-bedrock-from-canada-with-cross-region-inference/)
+- **AWS Machine Learning** · 2026-10-20 — [Discover tools at runtime with AWS Agent Registry](https://aws.amazon.com/blogs/machine-learning/discover-tools-at-runtime-with-aws-agent-registry/)
+- **AWS Machine Learning** · 2026-10-20 — [Securing AI agent identity with X.509 PKI on AWS](https://aws.amazon.com/blogs/machine-learning/securing-ai-agent-identity-with-x-509-pki-on-aws/)
+- **AWS Machine Learning** · 2026-10-20 — [How Eon built multi-cloud investigation with an MCP Gateway on Amazon Bedrock AgentCore](https://aws.amazon.com/blogs/machine-learning/how-eon-built-multi-cloud-investigation-with-an-mcp-gateway-on-amazon-bedrock-agentcore/)
+- **AWS Machine Learning** · 2026-10-20 — [Build a semantic layer for agentic AI on AWS with Denodo and Amazon Bedrock AgentCore](https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-denodo-and-amazon-bedrock-agentcore/)
+- **AWS Machine Learning** · 2026-10-20 — [Build a semantic layer for agentic AI on AWS with Strategy Mosaic and Amazon Bedrock AgentCore](https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-strategy-mosaic-and-amazon-bedrock-agentcore/)
+- **AWS Machine Learning** · 2026-10-20 — [Build a semantic layer for agentic AI on AWS with AtScale and Amazon Bedrock AgentCore](https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-on-aws-with-atscale-and-amazon-bedrock-agentcore/)
+- **AWS News** · 2026-10-20 — [Introducing Amazon ECS Gateway: A fully-managed ingress solution for ECS services](https://aws.amazon.com/blogs/aws/introducing-amazon-ecs-gateway-a-fully-managed-ingress-solution-for-ecs-services/)
+- **Amazon Science** · 2026-10-20 — [Strengthening AI safety evaluation through independent third-party review](https://www.amazon.science/blog/strengthening-ai-safety-evaluation-through-independent-third-party-review)
+- **Cloudflare** · 2026-10-20 — [8 eMudhra certificates are compromised. Here's what you need to know](https://blog.cloudflare.com/emudhra-certificate-compromise/)
+- **Cloudflare** · 2026-10-20 — [Introducing tsrs: A port of TypeScript to Rust](https://blog.cloudflare.com/typescript-rust-port/)
+- **GitHub** · 2026-10-20 — [How 3 Java Champions are using GitHub Copilot for increased productivity](https://github.blog/ai-and-ml/github-copilot/how-3-java-champions-are-using-github-copilot-for-increased-productivity/)
+- **Google (The Keyword)** · 2026-10-20 — [Get hands-free personalized help on the road with Gemini](https://blog.google/products-and-platforms/platforms/android/android-auto-cars-with-google-built-in-gemini-personal-intelligence/)
+- **Google (The Keyword)** · 2026-10-20 — [Ask a Scientist: How can AI help doctors spend more time on collaborative care?](https://blog.google/innovation-and-ai/models-and-research/google-research/amie-clinical-study/)
+- **Google (The Keyword)** · 2026-10-20 — [New Gemini tools for small business owners](https://blog.google/innovation-and-ai/products/gemini-app/new-tools-small-business-owners/)
+- **Google (The Keyword)** · 2026-10-20 — [Expanding our defenses against financial scam ads](https://blog.google/products/ads-commerce/financial-services-verification-united-states-canada/)
+- **Microsoft** · 2026-10-20 — [Advancing digital sovereignty with greater control and choice](https://blogs.microsoft.com/blog/2026/10/20/advancing-digital-sovereignty-with-greater-control-and-choice/)
+- **Microsoft Research** · 2026-10-20 — [Called to serve: Tech, research, and positive impact](https://www.microsoft.com/en-us/research/podcast/called-to-serve-tech-research-and-positive-impact-with-chris-white/)
+- **NVIDIA** · 2026-10-20 — [Spain-Based Startups Advance Regional Innovation With Barcelona Supercomputing Center](https://blogs.nvidia.com/blog/spain-startups-barcelona-supercomputing-center/)
+- **OpenAI** · 2026-10-20 — [Franchisee reconciles cash in 94% less time with ChatGPT Work](https://openai.com/index/ted-taylor-restaurant)
 
 ## Feeds with errors
 - Microsoft AI: network error: 410 Client Error: Gone for url: https://blogs.microsoft.com/ai/feed/
 - Uber Engineering: network error: 404 Client Error: Not Found for url: https://www.uber.com/us/en/blog/engineering/rss/
-- Meta AI: network error: 404 Client Error: Not Found for url: https://ai.meta.com/blog/rss/
 - Baidu Research: parse error: mismatched tag: line 57, column 2
+- Meta AI: network error: 404 Client Error: Not Found for url: https://ai.meta.com/blog/rss/
 - Alibaba Cloud: parse error: syntax error: line 1, column 0
