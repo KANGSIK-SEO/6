@@ -1,33 +1,29 @@
-# Tech Blog Digest (2026-10-27)
+# Tech Blog Digest (2026-10-28)
 
-_20 article(s)_
+_16 article(s)_
 
 ## Silicon Valley / US
 
-- **AWS Machine Learning** · 2026-10-26 — [Fleet-wide computer vision lifecycle at the edge with SageMaker SDK v3](https://aws.amazon.com/blogs/machine-learning/fleet-wide-computer-vision-lifecycle-at-the-edge-with-sagemaker-sdk-v3/)
-- **AWS Machine Learning** · 2026-10-26 — [Groundhog Day for AI agents: Prompt caching patterns for using OpenAI models on Amazon Bedrock](https://aws.amazon.com/blogs/machine-learning/groundhog-day-for-ai-agents-prompt-caching-patterns-for-using-openai-models-on-amazon-bedrock/)
-- **AWS Machine Learning** · 2026-10-26 — [Build agentic retrieval on a Managed Amazon Bedrock Knowledge Base with CDK](https://aws.amazon.com/blogs/machine-learning/build-agentic-retrieval-on-a-managed-amazon-bedrock-knowledge-base-with-cdk/)
-- **AWS News** · 2026-10-26 — [AWS Weekly Roundup: Amazon Polly Generative engine, TorchNeuron for Trainium, and more (October 26, 2026)](https://aws.amazon.com/blogs/aws/aws-weekly-roundup-amazon-polly-generative-engine-torchneuron-for-trainium-and-more-october-26-2026/)
-- **Cloudflare** · 2026-10-26 — [Cross-request KV cache exposure in the GLM-5.3 Workers AI model, and our remediation with SGLang](https://blog.cloudflare.com/kv-cache-exposure-remediation/)
-- **Google (The Keyword)** · 2026-10-26 — [Our newest AI Quest: Mapping the human brain](https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/)
-- **Google (The Keyword)** · 2026-10-26 — [15 college students share their favorite Gemini features](https://blog.google/products-and-platforms/products/gemini/college-student-favorite-features/)
-- **Google (The Keyword)** · 2026-10-26 — [Powering sub-Saharan Africa beyond the grid](https://blog.google/company-news/outreach-and-initiatives/sustainability/sub-saharan-africa-ignite/)
-- **Google (The Keyword)** · 2026-10-26 — [We’re helping farmers around the world connect to essential services online.](https://blog.google/company-news/outreach-and-initiatives/google-org/digital-public-infrastructure-farmers/)
-- **Google (The Keyword)** · 2026-10-26 — [How Google Beam connects military families globally](https://blog.google/innovation-and-ai/technology/research/google-beam-uso-docuseries-service-members/)
-- **Meta Engineering** · 2026-10-26 — [Meta Networking at the 2026 OCP Global Summit: Open Innovation for Scale-Up, Scale-Out, and Scale-Across AI Networks](https://engineering.fb.com/2026/10/26/open-source/ocp-summit-2026-meta-networking-talks/)
-- **Microsoft** · 2026-10-26 — [Introducing a Voluntary Exit Offer](https://blogs.microsoft.com/blog/2026/10/26/introducing-a-voluntary-exit-offer/)
-- **Netflix Tech** · 2026-10-26 — [Making Failure Diagnosis Reliable with Pensive AI](https://netflixtechblog.com/making-failure-diagnosis-reliable-with-pensive-ai-6b0811a1c015?source=rss----2615bd06b42e---4)
-- **Netflix Tech** · 2026-10-26 — [Multi‑Ratio Video Resizing for Mobile Feed and Marketing](https://netflixtechblog.com/multi-ratio-video-resizing-for-mobile-feed-and-marketing-2e6b42810f49?source=rss----2615bd06b42e---4)
-- **OpenAI** · 2026-10-26 — [Greptile takes bug detection beyond code review with GPT-6 Astra](https://openai.com/index/greptile-code-review-codex-astra)
-- **OpenAI** · 2026-10-26 — [Working with academic communities to build scientific understanding](https://openai.com/index/building-scientific-understanding-with-academic-communities)
-- **OpenAI** · 2026-10-26 — [GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases](https://openai.com/index/gpt-6-1-sol-coderabbit-code-security)
-- **OpenAI** · 2026-10-26 — [ChatGPT’s expanding world of work](https://openai.com/index/chatgpt-expanding-world-of-work)
-- **OpenAI** · 2026-10-26 — [How Fanatics and OpenAI streamline the fan experience](https://openai.com/index/fanatics-streamline-fan-experience)
-- **OpenAI** · 2026-10-26 — [How Ultrafast cut incident investigation from hours to minutes at OpenAI](https://openai.com/index/openai-cut-incident-investigation)
+- **AWS Machine Learning** · 2026-10-27 — [AWS named a Leader in the 2026 Gartner Magic Quadrant for Contact Center as a Service](https://aws.amazon.com/blogs/machine-learning/aws-named-a-leader-in-the-2026-gartner-magic-quadrant-for-contact-center-as-a-service/)
+- **AWS Machine Learning** · 2026-10-27 — [Announcing SOCI-indexed images for faster SageMaker AI jobs](https://aws.amazon.com/blogs/machine-learning/announcing-soci-indexed-images-for-faster-sagemaker-ai-jobs/)
+- **AWS Machine Learning** · 2026-10-27 — [Fix evaluation bias to unlock better models on Amazon Bedrock](https://aws.amazon.com/blogs/machine-learning/fix-evaluation-bias-to-unlock-better-models-on-amazon-bedrock/)
+- **AWS Machine Learning** · 2026-10-27 — [Exowatt beats frontier models on accuracy with SageMaker serverless model customization](https://aws.amazon.com/blogs/machine-learning/exowatt-beats-frontier-models-on-accuracy-with-sagemaker-serverless-model-customization/)
+- **Cloudflare** · 2026-10-27 — [Introducing the Cloudflare PHP Capture the Flag challenge](https://blog.cloudflare.com/php-ctf/)
+- **Cloudflare** · 2026-10-27 — [What took the Internet offline in Q3 2026](https://blog.cloudflare.com/q3-2026-internet-disruption-summary/)
+- **Google (The Keyword)** · 2026-10-27 — [We’re announcing Genie 4, our new world model for real-time interactive simulation.](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4/)
+- **Google (The Keyword)** · 2026-10-27 — [8 examples of Gemini 4 Argon in action](https://blog.google/products-and-platforms/products/gemini/gemini-4-argon-in-action/)
+- **Google (The Keyword)** · 2026-10-27 — [Fitbit Edge: Premium design for an active life](https://blog.google/products-and-platforms/devices/fitbit/fitbit-edge-design/)
+- **Google Research** · 2026-10-27 — [The sleep framework: A new way for LLMs to retain knowledge in continual learning](https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/)
+- **Meta Engineering** · 2026-10-27 — [PrivacyLib: Privacy Controls at the Data Access Boundary](https://engineering.fb.com/2026/10/27/security/privacylib/)
+- **Meta Engineering** · 2026-10-27 — [Python Typing Survey 2026: AI Tools and the Shifting Checker Landscape](https://engineering.fb.com/2026/10/27/developer-tools/python-typing-survey-2026-ai-tools-checker-landscape/)
+- **Microsoft** · 2026-10-27 — [The platform approach to becoming Frontier](https://blogs.microsoft.com/blog/2026/10/27/the-platform-approach-to-becoming-frontier/)
+- **NVIDIA** · 2026-10-27 — [How AI Is Changing the Pace of Discovery for Millions Living With Dementia](https://blogs.nvidia.com/blog/open-source-ai-tools-cbrain-dementia/)
+- **OpenAI** · 2026-10-27 — [Retell uses OpenAI models to help power 100M monthly calls](https://openai.com/index/retell-ai)
+- **OpenAI** · 2026-10-27 — [OpenAI expands partnership with Oracle to bring its apps to ChatGPT](https://openai.com/index/oracle-apps-in-chatgpt)
 
 ## Feeds with errors
 - Microsoft AI: network error: 410 Client Error: Gone for url: https://blogs.microsoft.com/ai/feed/
-- Meta AI: network error: 404 Client Error: Not Found for url: https://ai.meta.com/blog/rss/
 - Uber Engineering: network error: 404 Client Error: Not Found for url: https://www.uber.com/us/en/blog/engineering/rss/
+- Meta AI: network error: 404 Client Error: Not Found for url: https://ai.meta.com/blog/rss/
 - Baidu Research: parse error: mismatched tag: line 57, column 2
-- Alibaba Cloud: parse error: syntax error: line 1, column 0
+- Alibaba Cloud: parse error: mismatched tag: line 107, column 172
