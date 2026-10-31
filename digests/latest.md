@@ -1,32 +1,22 @@
-# Tech Blog Digest (2026-10-30)
+# Tech Blog Digest (2026-10-31)
 
-_23 article(s)_
+_13 article(s)_
 
 ## Silicon Valley / US
 
-- **AWS Machine Learning** · 2026-10-29 — [How the UK Amazon Quick User Group grew in 2026](https://aws.amazon.com/blogs/machine-learning/how-the-uk-amazon-quick-user-group-grew-in-2026/)
-- **AWS Machine Learning** · 2026-10-29 — [Building intent-driven UI testing with Amazon Nova Act](https://aws.amazon.com/blogs/machine-learning/building-intent-driven-ui-testing-with-amazon-nova-act/)
-- **AWS Machine Learning** · 2026-10-29 — [Build a repeatable PHP-to-Java migration engine with Kiro](https://aws.amazon.com/blogs/machine-learning/build-a-repeatable-php-to-java-migration-engine-with-kiro/)
-- **AWS Machine Learning** · 2026-10-29 — [Lend and borrow resources across teams with AWS Batch’s quota management for SageMaker Training jobs](https://aws.amazon.com/blogs/machine-learning/lend-and-borrow-resources-across-teams-with-aws-batchs-quota-management-for-sagemaker-training-jobs/)
-- **AWS Machine Learning** · 2026-10-29 — [How MoEngage turned over 400 APIs into agent tools with AgentCore Gateway](https://aws.amazon.com/blogs/machine-learning/how-moengage-turned-over-400-apis-into-agent-tools-with-agentcore-gateway/)
-- **AWS Machine Learning** · 2026-10-29 — [Accelerate agentic AI with NVIDIA Nemotron models on Amazon EKS and SageMaker HyperPod EKS](https://aws.amazon.com/blogs/machine-learning/accelerate-agentic-ai-with-nvidia-nemotron-models-on-amazon-eks-and-sagemaker-hyperpod-eks/)
-- **Amazon Science** · 2026-10-29 — [Speeding up language models for travel applications](https://www.amazon.science/blog/speeding-up-language-models-for-travel-applications)
-- **Cloudflare** · 2026-10-29 — [Cloudflare DDoS Threat Report 2026 Q3: More swarms, fewer giants](https://blog.cloudflare.com/ddos-threat-report-2026-q3/)
-- **Google (The Keyword)** · 2026-10-29 — [You can now generate, preview, and edit documents, PDFs, presentations, spreadsheets, and more directly in Gemini.](https://blog.google/innovation-and-ai/products/gemini-app/edit-files-directly/)
-- **Google (The Keyword)** · 2026-10-29 — [Colorado students joined a Google hackathon to tackle energy grid challenges.](https://blog.google/company-news/outreach-and-initiatives/sustainability/colorado-impact-hackathon/)
-- **Google (The Keyword)** · 2026-10-29 — [Gemini Notebook makes hundreds of textbooks available to help students learn even more.](https://blog.google/innovation-and-ai/products/gemini-notebook/new-access-textbooks/)
-- **Google (The Keyword)** · 2026-10-29 — [Celebrate Halloween with these tricks in Google Photos.](https://blog.google/products-and-platforms/products/photos/halloween-tricks-2026/)
-- **Google (The Keyword)** · 2026-10-29 — [Equipping healthcare professionals with practical AI skills](https://blog.google/innovation-and-ai/technology/health/google-ai-for-healthcare-professionals-certificate/)
-- **Google (The Keyword)** · 2026-10-29 — [How to use Gemini to update your resume](https://blog.google/innovation-and-ai/products/gemini-app/update-resume-with-gemini/)
-- **Google (The Keyword)** · 2026-10-29 — [How Gemini is helping students and teachers in the classroom](https://blog.google/products-and-platforms/products/education/impact-studies-uk-italy/)
-- **Google (The Keyword)** · 2026-10-29 — [Partnering with Singapore to bring frontier AI to public health](https://blog.google/innovation-and-ai/technology/health/google-for-health-summit-singapore/)
-- **Meta Engineering** · 2026-10-29 — [Catching Bugs Before They Land: JiTTesting’s Human-on-the-Loop Approach at Full Scale](https://engineering.fb.com/2026/10/29/security/catching-bugs-before-they-land-jittestings-human-on-the-loop-approach-at-full-scale/)
-- **Microsoft Research** · 2026-10-29 — [Microsoft Research Focus – Edition #97](https://www.microsoft.com/en-us/research/podcast/microsoft-research-focus-edition-97/)
-- **NVIDIA** · 2026-10-29 — [Into the Omniverse: How Developers Turn Ideas Into Simulations With Frontier AI Agents](https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/)
-- **NVIDIA** · 2026-10-29 — [Slice Into GFN Thursday: ‘Phantom Blade Zero’ Launches on GeForce NOW](https://blogs.nvidia.com/blog/geforce-now-thursday-phantom-blade-zero/)
-- **OpenAI** · 2026-10-29 — [An updated Model Spec for more capable and beneficial AI](https://openai.com/index/updated-model-spec)
-- **OpenAI** · 2026-10-29 — [How we detect frontier model misalignment](https://openai.com/index/how-we-detect-frontier-model-misalignment)
-- **OpenAI** · 2026-10-29 — [How Ropes & Gray is developing AI for transactional diligence](https://openai.com/index/ropes-gray-ai-diligence)
+- **AWS Machine Learning** · 2026-10-30 — [Managing Amazon Bedrock costs end to end: A playbook for FinOps and platform teams](https://aws.amazon.com/blogs/machine-learning/managing-amazon-bedrock-costs-end-to-end-a-playbook-for-finops-and-platform-teams/)
+- **AWS Machine Learning** · 2026-10-30 — [Preview web apps live as your coding agent builds them with Amazon Bedrock AgentCore runtime](https://aws.amazon.com/blogs/machine-learning/preview-web-apps-live-as-your-coding-agent-builds-them-with-amazon-bedrock-agentcore-runtime/)
+- **AWS Machine Learning** · 2026-10-30 — [How Worldwide Express automated freight exceptions with Amazon Bedrock](https://aws.amazon.com/blogs/machine-learning/how-worldwide-express-automated-freight-exceptions-with-amazon-bedrock/)
+- **AWS Machine Learning** · 2026-10-30 — [Configure the ChatGPT desktop app with Amazon Bedrock in AWS GovCloud (US)](https://aws.amazon.com/blogs/machine-learning/configure-the-chatgpt-desktop-app-with-amazon-bedrock-in-aws-govcloud-us/)
+- **Cloudflare** · 2026-10-30 — [4 real? Tracking exploitation and patching of eMudhra’s weak keys](https://blog.cloudflare.com/emudhra-patching/)
+- **Cloudflare** · 2026-10-30 — [Cloudflare services for private origins is now generally available](https://blog.cloudflare.com/private-origins-public-to-private/)
+- **Google (The Keyword)** · 2026-10-30 — [Google Fitbit Edge: On shelves now](https://blog.google/products-and-platforms/devices/fitbit/google-fitbit-edge-on-shelves-now/)
+- **Google (The Keyword)** · 2026-10-30 — [We’ve received our first response from the Project Suncatcher prototype satellite.](https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-satellite-response/)
+- **Google (The Keyword)** · 2026-10-30 — [See who has access to your Gmail inbox in 2 minutes.](https://blog.google/innovation-and-ai/technology/safety-security/google-security-checkup/)
+- **Microsoft Research** · 2026-10-30 — [From synthetic enterprise data evaluations to real Microsoft Copilot AI confidence](https://www.microsoft.com/en-us/research/blog/from-synthetic-enterprise-data-evaluations-to-real-microsoft-copilot-ai-confidence/)
+- **NVIDIA** · 2026-10-30 — [Things That Go Beep in the Night: Agentic AI Joins the Search for Extraterrestrial Signals](https://blogs.nvidia.com/blog/ai-joins-the-search-for-extraterrestrial-signals/)
+- **OpenAI** · 2026-10-30 — [Making it easier for websites to express AI training preferences](https://openai.com/index/helping-websites-express-ai-training-preferences)
+- **OpenAI** · 2026-10-30 — [Community safety report and new protections for teens](https://openai.com/index/community-safety-report-and-new-protections-for-teens)
 
 ## Feeds with errors
 - Microsoft AI: network error: 410 Client Error: Gone for url: https://blogs.microsoft.com/ai/feed/
