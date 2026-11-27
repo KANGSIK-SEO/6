@@ -1,13 +1,11 @@
-# Tech Blog Digest (2026-11-26)
+# Tech Blog Digest (2026-11-27)
 
-_4 article(s)_
+_2 article(s)_
 
 ## Silicon Valley / US
 
-- **Cloudflare** · 2026-11-25 — [Introducing Search for Agents](https://blog.cloudflare.com/search-for-agents/)
-- **GitHub** · 2026-11-25 — [Art of play in the age of AI](https://github.blog/news-insights/company-news/art-of-play-in-the-age-of-ai/)
-- **GitHub** · 2026-11-25 — [How to choose the next safe step in application modernization](https://github.blog/ai-and-ml/github-copilot/how-to-choose-the-next-safe-step-in-application-modernization/)
-- **Google Research** · 2026-11-25 — [Verifiable Social Reasoning for LLM Assistants](https://research.google/blog/verifiable-social-reasoning-for-llm-assistants/)
+- **Google (The Keyword)** · 2026-11-26 — [15 years of investing in Colombia’s talent and future](https://blog.google/company-news/outreach-and-initiatives/google-org/15-years-investing-colombia-talent-future/)
+- **NVIDIA** · 2026-11-26 — [Come for the Games, Stay for the Community With GeForce NOW](https://blogs.nvidia.com/blog/geforce-now-thursday-community-war-thunder-reward/)
 
 ## Feeds with errors
 - Microsoft AI: network error: 410 Client Error: Gone for url: https://blogs.microsoft.com/ai/feed/
